@@ -1,9 +1,12 @@
 **Final Code**
+
 Contains code for:
 
 - Pre-processing the data
 - Plotting the time domain heat maps
 - Plotting Confusion Matrices, for evaluation
+
+Also contains some example CSV Files, to illustrate how they were created in MATLAB and loaded in Python. Note that the actual training, test and validation set CSV files could not be uploaded due to file size constraints.
 
 **Networks**
 
