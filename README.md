@@ -10,14 +10,14 @@ Dataset Name: PhysioNet EEG Motor Movement/Imagery Dataset
 The EEG Motor Movement/Imagery Dataset includes 64-channel EEG signals collected at a sample rate of 160 Hz from 109 healthy subjects who performed six different tasks in the 14 experimental runs. For execution data, these tasks are (i) left fist, (ii) right fist open and closed, (iii) both fists, (iv) both feet open and closed. The imagined tasks are the same as though executed, such that we have four classes each of imaginary and executed movements.  Subjects were guided to perform tasks by visual feedback.
 
 ## Approaches
-* Model 1: GCN with Time Domain Signals (TD-GCN)
+* Model 1: GCN with Time Domain Signals (TD-GCN) - A six layer Graphical Convolutional Network, with 355360 parameters. The input is the pre-filtered time domain signal, with no other feature selection. The connectivity metric used to transform the data with Fourier Graph Transform is the well-known Spearman's power correlation, which is appropriate for measuring EEG connectivity here.
 * Model 2: GCN With Diverse Features (F-GCN) - extracted 25 features (temporal, spectral, and connectivity) from normalized EEG signals as feature matric of each trial, computed the adjacency matrix in Coordinate (COO) format using Spearman's correlations, and calculate the connectivity features through MS-coherence.
 
 ## Results
 ### Model 1
-
+The four-class classification (test data) accuracy achieved was 73% for the imaginary data, after training the network for 50 epochs. Meanwhile, the model achieved a test accuracy of 77% for the executed data. 
 ### Model 2
-The proposed F-GCN model with diverse features achieves a validation accuracy of 62.50% (testaccuracy: 62.50%, a precision of 60.37%, a recall of 60.00% and a F1-score of 60.08%. The training process is efficient that the training per iteration is≈1.3s due to the small number of trainableparameters. The proposed model converges at epoch 160. <br /> <br />
+The proposed F-GCN model with diverse features achieves a validation accuracy of 62.50% (testaccuracy: 62.50%, a precision of 60.37%, a recall of 60.00% and a F1-score of 60.08%. The training process is efficient that the training per iteration is≈1.3s due to the small number of trainable parameters. The proposed model converges at epoch 160. <br /> <br />
 <img src="Figs/losses_F-GCN.png" width=40% height=50%> <img src="Figs/accs_F-GCN.png" width=39% height=50%>
 <img src="Figs/cm_F-GCN.png" width=40% height=50%>
 
