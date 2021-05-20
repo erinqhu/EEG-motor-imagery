@@ -1,3 +1,9 @@
+**Final Code**
+Contains code for:
+
+- Pre-processing the data
+- Plotting the time domain heat maps
+- Plotting Confusion Matrices, for evaluation
 
 **Networks**
 
